@@ -1,0 +1,24 @@
+import { SafeAny } from '@shared/types/yacommon';
+
+export function preloaderFinished(): void {
+	const body = document.querySelector('body')!;
+	const preloader = document.querySelector('.preloader')!;
+
+	body.style.overflow = 'hidden';
+
+	function remove(): void {
+		if (!preloader) return;
+		preloader.addEventListener('transitionend', () => {
+			preloader.className = 'preloader-hidden';
+		});
+
+		preloader.className += ' preloader-hidden-add preloader-hidden-add-active';
+	}
+
+	(window as SafeAny).appBootstrap = () => {
+		setTimeout(() => {
+			remove();
+			body.style.overflow = '';
+		}, 100);
+	};
+}

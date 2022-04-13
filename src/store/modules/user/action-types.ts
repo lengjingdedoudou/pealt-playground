@@ -1,0 +1,14 @@
+export enum UserActionTypes {
+	/** 登录 */
+	ACTION_LOGIN = 'ACTION_LOGIN',
+	/** 登出 */
+	ACTION_LOGOUT = 'ACTION_LOGOUT',
+	/** 获取用户信息 */
+	ACTION_GET_USER_INFO = 'ACTION_GET_USER_INFO',
+	/** 刷新token */
+	ACTION_REFRESH_TOKEN = 'ACTION_REFRESH_TOKEN',
+	/** 重置token */
+	ACTION_RESET_TOKEN = 'ACTION_RESET_TOKEN',
+	/** 改变角色 */
+	ACTION_CHANGE_ROLES = 'ACTION_CHANGE_ROLES'
+}

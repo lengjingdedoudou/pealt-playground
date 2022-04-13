@@ -1,0 +1,3 @@
+export enum SystemActionTypes {
+	ACTION_GET_SETTING_DETAIL = 'ACTION_GET_SETTING_DETAIL'
+}

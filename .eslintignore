@@ -1,0 +1,7 @@
+/public/
+/dist/
+/*.js
+/*.zip
+/*.rar
+/node_modules/
+/src/components.d.ts

@@ -1,11 +1,41 @@
-# Vue 3 + Typescript + Vite
+# 项目介绍
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+**Vue 3 + Typescript + Vite**
 
-## Recommended IDE Setup
+## 目录结构
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+```
+├── public                                       # 静态资源服务的文件夹
+├── src
+│   ├── app
+│   │   ├── components                           # 全局自定义组件文件夹
+│   │   ├── core                                 # 核心模块
+│   │   │   ├── api                              # http请求文件夹，所有request应在此文件夹维护
+│   │   │   │   └── types                        # 所有request的入参interface应在此文件夹维护
+│   │   │   ├── config                           # 程序配置文件夹，所有全局性config应在此文件夹维护
+│   │   │   ├── services
+│   │   │   │   ├── cache                        # 缓存相关服务，所有localStorage等操作，都要通过该服务
+│   │   │   │   └── http                         # http服务
+│   │   │   ├── startup
+│   │   │   │   └── preloader.ts                 # 初始化loading
+│   │   │   └── core.module.ts                   # 核心模块文件
+│   │   ├── layout                               # 通用布局
+│   │   ├── routes
+│   │   │   ├── **                               # 业务目录
+│   │   │   ├── permission.ts                    # 业务路由拦截器
+│   │   │   └── routes.module.ts                 # 业务路由注册口
+│   │   └──  shared                              # 共享模块
+│   │       ├── directive                        # vue指令
+│   │       ├── filter                           # vue过滤器
+│   │       ├── json-schema                      # 自定义表单schema
+│   │       ├── sf-widget                        # 自定义表单小部件
+│   │       ├── types                            # 所有interface 和 type在此文件夹维护（除api type）
+│   │       └── utils                            # 公共方法
+│   │
+│   ├── assets                                   # 本地静态资源
+│   ├── environments                             # 环境变量配置
+│   ├── store                                    # vuex
+│   ├── styles                                   # 样式目录
+│   ├── typings                                  # 手动添加的类型
+└── └── style.less                               # 样式引导入口
+```
